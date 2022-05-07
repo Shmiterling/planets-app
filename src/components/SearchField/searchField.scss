@@ -1,0 +1,15 @@
+.search-field-container {
+    top:120px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.search-field-container .search-field {
+    width:90%;
+    line-height: 2.5em;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: none;
+}

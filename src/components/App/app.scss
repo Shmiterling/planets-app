@@ -2,6 +2,7 @@ body {
     background-color: #f1f2f3;
 }
 .app {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,13 +18,15 @@ body {
   }
 
   .app h1 {
-      position: relative;
-      top:30px;
+
       text-align: center;
       font-size: 2em;
       color: #3c3c20;
   }
   .app .list-of-planets {
+
+    width: 80%;
+
     flex-basis: 100%;
     text-align: center;
   }

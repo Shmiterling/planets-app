@@ -1,9 +1,10 @@
 import './app.scss';
-import React, { useState, useEffect, ReactNode, SyntheticEvent } from 'react';
-import { MouseEvent } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
+
 import preloader from '../img/preloader.gif';
 import Planets from '../Planets/Planets'
+import SearchField from '../SearchField/SearchField';
 
 interface Planet {
   name: string;
@@ -39,7 +40,7 @@ function App(): JSX.Element {
   const [planets, setPlanets] = useState<Planet[]>([])
   const [pagination, setPagination] = useState<Pagination[]>([])
   const [preloaderFlag, setPreloaderFlag] = useState<boolean>(false)
-  const [infoState, setInfoState] = useState<boolean>(false);
+
 
   useEffect(() => {
     downloadData('https://swapi.dev/api/planets')
@@ -54,15 +55,22 @@ function App(): JSX.Element {
 
         let pages: Pagination[] = []
 
-        for (
-          let i: number = 1;
-          i <= Math.ceil(response.data.count / response.data.results.length);
-          i++
-        ) {
-          pages.push({ number: i, url: 'https://swapi.dev/api/planets/?page=' + i })
-        }
+        if (!url.includes('page')) {
 
-        setPagination(pages)
+          for (
+            let i: number = 1;
+            i <= Math.ceil(response.data.count / response.data.results.length);
+            i++
+          ) {
+            if (url.includes('search')) {
+              pages.push({ number: i, url: url + '&page=' + i })
+            } else {
+              pages.push({ number: i, url: url + '?page=' + i })
+            }
+          }
+
+          setPagination(pages)
+        }
 
         setPreloaderFlag(false)
       })
@@ -73,12 +81,14 @@ function App(): JSX.Element {
     <div className='app'>
       <h1>List of Star Wars Universe Planets</h1>
 
+      <SearchField downloadData={downloadData} />
+
       {preloaderFlag && <img src={preloader}></img>}
 
       {preloaderFlag || <div className='list-of-planets'>
-        {planets.map((planet:Planet) => {
+        {planets.map((planet: Planet) => {
 
-          return <Planets planet={planet}/>
+          return <Planets key={planet.name} planet={planet} />
 
         })}
       </div>}
@@ -88,7 +98,7 @@ function App(): JSX.Element {
           {pagination.map((page) => {
             return (
               <li className={(pageOnView === page.number ? 'button active' : 'button')}
-                onClick={() => { downloadData(page.url); setPageOnView(page.number) }}
+                onClick={() => { downloadData(page.url); setPageOnView(page.number);}}
                 key={page.number}>
                 {page.number}
               </li>
