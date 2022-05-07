@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/planets-app/static/css/main.8cf15b60.css",
-    "main.js": "/planets-app/static/js/main.3287da09.js",
+    "main.css": "/planets-app/static/css/main.bd9e9a3e.css",
+    "main.js": "/planets-app/static/js/main.96cc322e.js",
     "static/js/787.46097082.chunk.js": "/planets-app/static/js/787.46097082.chunk.js",
     "static/media/preloader.gif": "/planets-app/static/media/preloader.d062fa0456aa01144d8b.gif",
     "index.html": "/planets-app/index.html",
-    "main.8cf15b60.css.map": "/planets-app/static/css/main.8cf15b60.css.map",
-    "main.3287da09.js.map": "/planets-app/static/js/main.3287da09.js.map",
+    "main.bd9e9a3e.css.map": "/planets-app/static/css/main.bd9e9a3e.css.map",
+    "main.96cc322e.js.map": "/planets-app/static/js/main.96cc322e.js.map",
     "787.46097082.chunk.js.map": "/planets-app/static/js/787.46097082.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8cf15b60.css",
-    "static/js/main.3287da09.js"
+    "static/css/main.bd9e9a3e.css",
+    "static/js/main.96cc322e.js"
   ]
 }
