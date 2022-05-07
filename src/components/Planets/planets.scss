@@ -1,0 +1,25 @@
+.list-of-planets .planet {
+    margin: 10px 0;
+    padding: 10px 0;
+    background-color: #f1f2f3;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: rgba(102, 102, 102, 0.2) 1px solid;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+.list-of-planets .planet .planet-name{
+    color:#3c3c20;
+    font-size: 1.1em;
+    font-weight: 500;
+  }
+  
+.list-of-planets .planet .information {
+    display: block;
+  }
+
+.list-of-planets .planet .information p {
+    text-align: left;
+    margin-left:10px;
+    color: #3c3c20;
+  }
