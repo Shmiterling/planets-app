@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './planets.scss'
+import './Planets.scss'
 
 interface Props {
     planet: Planet;
