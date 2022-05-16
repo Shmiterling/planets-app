@@ -57,6 +57,10 @@ function App(): JSX.Element {
 
         if (!url.includes('page')) {
 
+          if(url === 'https://swapi.dev/api/planets') {
+            setPageOnView(1);
+          }
+
           for (
             let i: number = 1;
             i <= Math.ceil(response.data.count / response.data.results.length);
@@ -64,6 +68,7 @@ function App(): JSX.Element {
           ) {
             if (url.includes('search')) {
               pages.push({ number: i, url: url + '&page=' + i })
+              setPageOnView(1)
             } else {
               pages.push({ number: i, url: url + '?page=' + i })
             }
